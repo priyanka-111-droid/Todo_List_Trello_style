@@ -23,7 +23,7 @@
         </div>
 
         <div class="form-group">
-            <label for="complete">Complete? todo/doing/done</label>
+            <label for="complete">Complete?</label>
             {{ form.complete(class_="form-control", placeholder="Item status") }}
             {% for error in form.complete.errors %}
                 <span style="color: red;">{{ error }}</span>

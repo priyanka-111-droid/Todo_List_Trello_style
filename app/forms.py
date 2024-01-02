@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm 
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, SelectField
 from wtforms.validators import DataRequired,ValidationError, Email, EqualTo,Length
 import sqlalchemy as sa
 from app import db
@@ -54,12 +54,12 @@ class EditProfileForm(FlaskForm):
 class ItemForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     content = TextAreaField('Content', validators=[DataRequired()])
-    complete = StringField('Complete? todo/doing/done', validators=[DataRequired()])
+    complete = SelectField('Complete?', choices=[('todo', 'todo'), ('doing', 'doing'), ('done', 'done')])
     submit = SubmitField('Add Todo Item')
 
 
 class EditTodoForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     content = TextAreaField('Content', validators=[DataRequired()])
-    complete = StringField('Complete? todo/doing/done', validators=[DataRequired()])
+    complete = SelectField('Complete?', choices=[('todo', 'todo'), ('doing', 'doing'), ('done', 'done')])
     submit = SubmitField('Edit Item')

@@ -17,12 +17,26 @@ python main.py
 
 # To add:
 - Deadlines for todo
-- StatusField for todo/doing/done instead of manually typing every time
 - List view with deadlines sorted in descending order.
 - Testing
 - Deployment
-- Update Approach and Learnings
+
 
 # Approach
 
+- Inspired by : https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+
+- In routes.py, edit route and delete route were referred from https://blog.devgenius.io/how-to-create-a-todo-application-with-flask-21b71651c7dc.
+
+
 # Learnings
+
+- Importance of virtual env - venv
+- NoSQL databases better if less defined structure
+- Relational databases(SQL databases) better for blogs,lists etc.
+- SQLAlchemy package is an ORM.ORM lets you use classes and objects instead of tables and SQL.
+- Alembic is database migration framework for SQLAlchemy.
+- Foeign key references primary key of another table.
+- One user writes many posts-> One-to-many relationship.
+- Error handling using `set FLASK_DEBUG=1` and then custom error pages(@errorhandler decorator)
+- Traditional server-side model vs Single Page Applications(SPA) and AJAX
